@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  
+  demo-app:
+    restart: unless-stopped
+    container_name: demo-app
+    volumes:
+        - './logs:/code/logs'
+    ports:
+      - "7001:7001"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    depends_on:
+      - mongodb
+    networks:
+      demo_net:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    container_name: mongodb
+    restart: unless-stopped
+    volumes:
+        - './data/data'
+    networks:
+      demo_net:
+
+networks:
+  demo_net:
+    driver: bridge
