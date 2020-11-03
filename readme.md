@@ -1,5 +1,5 @@
-#Software Testing & Test Automation
-#####Vasilis Petrou
+<h1>Software Testing & Test Automation</h1>
+<h5>Vasilis Petrou</h5>
 
 A workshop on Software Testing & Test Automation. 
 
